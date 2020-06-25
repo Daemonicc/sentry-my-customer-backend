@@ -1,8 +1,10 @@
-const router = require("express").Router(),
-            ejs = require("ejs");
+const router = require("express").Router();
 
 router.get("*", (req, res)=>{
-    res.render("error-page.ejs")
+    res.status(404).send({
+        status: "failed",
+        message: "route not found"
+    })
 })
 
 module.exports = router;
